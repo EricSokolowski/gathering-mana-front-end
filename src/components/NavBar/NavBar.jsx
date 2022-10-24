@@ -10,11 +10,11 @@ const NavBar = ({ user, handleLogout }) => {
           <li><Link to="" onClick={handleLogout}>LOG OUT</Link></li>
           <li><Link to="/changePassword">Change Password</Link></li>
           <li><Link to="/deckBuilder">Build Deck</Link></li>
-          <li><Link to="/decks">Deck Page</Link></li>
+          <li><Link to="/decks-index">Deck Page</Link></li>
         </ul>
         :
         <ul>
-          <li><Link to="/decks">Deck Page</Link></li>
+          <li><Link to="/decks-index">Deck Page</Link></li>
           <li><Link to="/login">Log In</Link></li>
           <li><Link to="/signup">Sign Up</Link></li>
         </ul>

@@ -1,5 +1,5 @@
 // npm modules
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { Routes, Route, useNavigate, } from 'react-router-dom'
 
 // page components
@@ -8,11 +8,12 @@ import Login from './pages/Login/Login'
 import Landing from './pages/Landing/Landing'
 import Profiles from './pages/Profiles/Profiles'
 import ChangePassword from './pages/ChangePassword/ChangePassword'
+import IndexPage from './pages/IndexPage/IndexPage'
+
 
 // components
 import NavBar from './components/NavBar/NavBar'
 import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute'
-
 // services
 import * as authService from './services/authService'
 import * as deckService from './services/deckService'
@@ -23,6 +24,7 @@ import './App.css'
 const App = () => {
   const [user, setUser] = useState(authService.getUser())
   const navigate = useNavigate()
+  const [decks, setDecks] = useState([])
 
   const handleLogout = () => {
     authService.logout()
@@ -33,6 +35,22 @@ const App = () => {
   const handleSignupOrLogin = () => {
     setUser(authService.getUser())
   }
+
+  // const handleAddDeck = async (deckData) => {
+  //   const newDeck = await deckService.create(deckData)
+  //   setDecks([newDeck, ...decks])
+  //   navigate('/decks')
+  // }
+
+  useEffect(() => {
+    console.log("The useEffect is running");
+    const fetchAllDecks = async () => {
+      console.log('The Fetch All Decks function is running')
+      const data = await deckService.index()
+      setDecks(data)
+    }
+    if (user) fetchAllDecks()
+  }, [user])
 
   return (
     <>
@@ -61,6 +79,12 @@ const App = () => {
             <ProtectedRoute user={user}>
               <ChangePassword handleSignupOrLogin={handleSignupOrLogin} />
             </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/decks-index"
+          element= {
+            <IndexPage decks={decks}/>
           }
         />
       </Routes>
