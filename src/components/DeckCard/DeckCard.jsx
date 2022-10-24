@@ -4,14 +4,16 @@ import styles from './DeckCard.module.css'
 // Components
 
 
-const Deck = ({ deck }) => {
+const DeckCard = ({ deck }) => {
+console.log (deck)
+  // console.log("NAME", deck.owner.name)
   return (
     <Link to={`/decks/${deck._id}`}>
       <article className={styles.container}>
         <header>
           <span>
             <h1>{deck.title}</h1>
-            <h1>{deck.owner}</h1>
+            <h1>{deck.owner.name}</h1>
           </span>
         </header>
       </article>
@@ -19,4 +21,4 @@ const Deck = ({ deck }) => {
   )
 }
 
-export default Deck
+export default DeckCard
