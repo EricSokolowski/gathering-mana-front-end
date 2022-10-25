@@ -14,6 +14,7 @@ import IndexPage from './pages/IndexPage/IndexPage'
 // components
 import NavBar from './components/NavBar/NavBar'
 import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute'
+import SpellSeacrh from './pages/SpellSearch/SpellSearch'
 // services
 import * as authService from './services/authService'
 import * as deckService from './services/deckService'
@@ -73,6 +74,16 @@ const App = () => {
             </ProtectedRoute>
           }
         />
+        <Route
+          path="/spell-search"
+          element={
+            <ProtectedRoute user={user}>
+              <SpellSeacrh />
+            </ProtectedRoute>
+          }
+        >
+          
+        </Route>
         <Route
           path="/change-password"
           element={
