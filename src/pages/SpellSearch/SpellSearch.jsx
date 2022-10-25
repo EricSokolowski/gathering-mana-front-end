@@ -6,20 +6,19 @@ const SpellSearch = () => {
   const [formData, setFormData] = useState({
     spellQuery: ""
   })
+
+  const [results, setResults] = useState([])
+  
   const handleChange = e => {
-    
     setFormData({ ...formData, [e.target.name]: e.target.value })
   }
 
   const handleSubmit = async evt => {
     evt.preventDefault()
     try {
-      const results = await spellService.search(formData)
-      // await api call
-      console.log(results)
-      //use result of Api call
-      
-    } catch (err) {
+      const resultData = await spellService.search(formData)
+      setResults(resultData)
+      } catch (err) {
       console.log(err)
     }
   }
