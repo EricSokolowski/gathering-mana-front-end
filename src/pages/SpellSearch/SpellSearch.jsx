@@ -1,9 +1,10 @@
 import { useState } from "react"
 import styles from './SpellSearch.module.css'
+import * as spellService from '../../services/spellServices'
 
-const SpellSeacrh = () => {
+const SpellSearch = () => {
   const [formData, setFormData] = useState({
-    spellQuerry: ""
+    spellQuery: ""
   })
   const handleChange = e => {
     
@@ -13,7 +14,9 @@ const SpellSeacrh = () => {
   const handleSubmit = async evt => {
     evt.preventDefault()
     try {
+      const results = await spellService.search(formData)
       // await api call
+      console.log(results)
       //use result of Api call
       
     } catch (err) {
@@ -32,9 +35,9 @@ const SpellSeacrh = () => {
           placeholder="Search for spell"
           type="text"
           autoComplete="off"
-          id="spell-querry"
+          id="spell-query"
           value={formData.spellQuery}
-          name="spell-querry"
+          name="spellQuery"
           onChange={handleChange}
         />
       </div>
@@ -46,4 +49,4 @@ const SpellSeacrh = () => {
   )
 }
 
-export default SpellSeacrh
+export default SpellSearch
