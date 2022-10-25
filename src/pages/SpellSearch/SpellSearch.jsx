@@ -1,6 +1,7 @@
 import { useState } from "react"
 import styles from './SpellSearch.module.css'
 import * as spellService from '../../services/spellServices'
+import Dropdown from '../../components/Dropdown/Dropdown.jsx'
 
 const SpellSearch = () => {
   const [formData, setFormData] = useState({
@@ -23,12 +24,19 @@ const SpellSearch = () => {
     }
   }
 
+  const options = [
+    {value: 'type', label: 'type'},
+    {value: 'name', label: 'name'},
+    {value: 'color', label: 'color'}
+  ]
+
   return (
     <form
-      autoComplete="off"
-      onSubmit={handleSubmit}
-      className={styles.container}
+    autoComplete="off"
+    onSubmit={handleSubmit}
+    className={styles.container}
     >
+    <Dropdown placeHolder='Select...'  options={options} />
       <div className={styles.inputContainer}>
         <input
           placeholder="Search for spell"
