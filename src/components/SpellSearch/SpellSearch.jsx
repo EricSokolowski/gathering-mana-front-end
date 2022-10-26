@@ -3,10 +3,15 @@ import styles from './SpellSearch.module.css'
 import * as spellService from '../../services/spellServices'
 import Dropdown from '../Dropdown/Dropdown.jsx'
 
-const SpellSearch = () => {
+const SpellSearch = (props) => {
   const [formData, setFormData] = useState({
-    spellQuery: ""
+    spellQuery: "",
+    option: "type"
   })
+  console.log(formData)
+    // {value: 'type', label: 'type'},
+    // {value: 'name', label: 'name'},
+    // {value: 'color', label: 'color'}
 
   const [results, setResults] = useState([])
   
@@ -24,12 +29,6 @@ const SpellSearch = () => {
     }
   }
 
-  const options = [
-    {value: 'type', label: 'type'},
-    {value: 'name', label: 'name'},
-    {value: 'color', label: 'color'}
-  ]
-
   return (
     <>
       <form
@@ -37,7 +36,7 @@ const SpellSearch = () => {
       onSubmit={handleSubmit}
       className={styles.container}
       >
-      <Dropdown placeHolder='Select...'  options={options} />
+      <Dropdown placeHolder='Select...'  formData={formData} handleChange={handleChange} />
         <div className={styles.inputContainer}>
           <input
             placeholder="Search for spell"
@@ -57,7 +56,12 @@ const SpellSearch = () => {
       {results.length ?
       <>
         {results.map((result) => 
-          <div>{result.name}</div>
+          <div key={result.id}>
+            {result.name}
+            <img src={result.imageUrl} alt={result.name} />
+            <button onClick={() => props.handleAddCard(result)}>Add Card</button>
+          </div>
+          
         )}
       </>
       :
