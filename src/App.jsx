@@ -9,7 +9,7 @@ import Landing from './pages/Landing/Landing'
 import Profiles from './pages/Profiles/Profiles'
 import ChangePassword from './pages/ChangePassword/ChangePassword'
 import IndexPage from './pages/IndexPage/IndexPage'
-import DeckBuilder from './pages/DeckBuilder/DeckBuilder'
+import NewDeck from './pages/NewDeck/NewDeck'
 
 // components
 import NavBar from './components/NavBar/NavBar'
@@ -36,11 +36,11 @@ const App = () => {
     setUser(authService.getUser())
   }
 
-  // const handleAddDeck = async (deckData) => {
-  //   const newDeck = await deckService.create(deckData)
-  //   setDecks([newDeck, ...decks])
-  //   navigate('/decks')
-  // }
+  const handleAddDeck = async (deckData) => {
+    const newDeck = await deckService.create(deckData)
+    setDecks([newDeck, ...decks])
+    navigate('/decks')
+  }
 
   useEffect(() => {
     console.log("The useEffect is running");
@@ -88,9 +88,9 @@ const App = () => {
           }
         />
         <Route
-          path="/deckBuilder"
+          path="/new-deck"
           element = {
-            <DeckBuilder />
+            <NewDeck handleAddDeck={handleAddDeck}/>
           }
         />
       </Routes>

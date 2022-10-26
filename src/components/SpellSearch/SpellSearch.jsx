@@ -31,28 +31,41 @@ const SpellSearch = () => {
   ]
 
   return (
-    <form
-    autoComplete="off"
-    onSubmit={handleSubmit}
-    className={styles.container}
-    >
-    <Dropdown placeHolder='Select...'  options={options} />
-      <div className={styles.inputContainer}>
-        <input
-          placeholder="Search for spell"
-          type="text"
-          autoComplete="off"
-          id="spell-query"
-          value={formData.spellQuery}
-          name="spellQuery"
-          onChange={handleChange}
-        />
-      </div>
-      
-      <div>
-        <button className={styles.button}>Search</button>
-      </div>
-    </form>
+    <>
+      <form
+      autoComplete="off"
+      onSubmit={handleSubmit}
+      className={styles.container}
+      >
+      <Dropdown placeHolder='Select...'  options={options} />
+        <div className={styles.inputContainer}>
+          <input
+            placeholder="Search for spell"
+            type="text"
+            autoComplete="off"
+            id="spell-query"
+            value={formData.spellQuery}
+            name="spellQuery"
+            onChange={handleChange}
+          />
+        </div>
+        
+        <div>
+          <button className={styles.button}>Search</button>
+        </div>
+      </form>
+      {results.length ?
+      <>
+        {results.map((result) => 
+          <div>{result.name}</div>
+        )}
+      </>
+      :
+      <>
+        <div>No Results
+        </div>
+      </>}
+    </>
   )
 }
 
