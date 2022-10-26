@@ -9,12 +9,11 @@ import Landing from './pages/Landing/Landing'
 import Profiles from './pages/Profiles/Profiles'
 import ChangePassword from './pages/ChangePassword/ChangePassword'
 import IndexPage from './pages/IndexPage/IndexPage'
-
+import DeckBuilder from './pages/DeckBuilder/DeckBuilder'
 
 // components
 import NavBar from './components/NavBar/NavBar'
 import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute'
-import SpellSearch from './pages/SpellSearch/SpellSearch'
 // services
 import * as authService from './services/authService'
 import * as deckService from './services/deckService'
@@ -75,16 +74,6 @@ const App = () => {
           }
         />
         <Route
-          path="/spell-search"
-          element={
-            <ProtectedRoute user={user}>
-              <SpellSearch />
-            </ProtectedRoute>
-          }
-        >
-          
-        </Route>
-        <Route
           path="/change-password"
           element={
             <ProtectedRoute user={user}>
@@ -96,6 +85,12 @@ const App = () => {
           path="/decks-index"
           element= {
             <IndexPage decks={decks}/>
+          }
+        />
+        <Route
+          path="/deckBuilder"
+          element = {
+            <DeckBuilder />
           }
         />
       </Routes>

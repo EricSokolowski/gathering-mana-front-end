@@ -1,7 +1,7 @@
 import { useState } from "react"
 import styles from './SpellSearch.module.css'
 import * as spellService from '../../services/spellServices'
-import Dropdown from '../../components/Dropdown/Dropdown.jsx'
+import Dropdown from '../Dropdown/Dropdown.jsx'
 
 const SpellSearch = () => {
   const [formData, setFormData] = useState({
