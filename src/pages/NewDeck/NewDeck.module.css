@@ -4,6 +4,7 @@
   overflow: hidden;
   /* align-items: center; */
   justify-content: space-around;
+  padding-top: 50px;
 }
 
 .container p { margin: 0; padding: 0px 0 10px; }
