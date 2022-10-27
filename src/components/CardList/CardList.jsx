@@ -1,7 +1,6 @@
 import styles from './CardList.module.css'
 
 const CardList = (props) => {
-  console.log(props.cards)
   return (
     <>
       {props.cards.map((card)=>(
