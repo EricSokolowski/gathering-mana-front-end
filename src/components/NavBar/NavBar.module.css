@@ -1,4 +1,12 @@
-nav {
+nav ul{
+  background-color: #280003;
+  min-height: 5vh;
   display: flex;
-  justify-content: flex-end;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 30px;
+  font-size: calc(10px + 2vmin);
+  color: white;
+  list-style-type: none
 }
