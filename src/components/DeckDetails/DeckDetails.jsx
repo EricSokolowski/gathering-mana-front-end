@@ -14,32 +14,33 @@ import * as deckService from '../../services/deckService'
 const DeckDetails = (props) => {
   const { id } = useParams()
   const [deck, setDeck] = useState(null)
-  const [cards, setCards] = useState([])
+  // const [cards, setCards] = useState([])
 
   useEffect(() => {
     const fetchDeck = async () => {
       const data  = await deckService.show(id)
+      console.log(data)
       setDeck(data)
     }
     fetchDeck()
   },[id])
 
-console.log("Deck State", deck.cards)
+// console.log("Deck State", deck.cards)
 console.log("")
 // if (!deck) return <Loading />
   return (
     <main className={styles.container}>
       Details
       <div>
-      {/* want decks index here */}
-      {/* {deck.props.map((card)=>{
-        <div key={card.id} >
-          {card.name}
-        </div>
-        })} */}
+        {/* <CardList cards={cards}/> */}
+      <>
+        {deck.cards?.map((card)=>
+          <h1>
+            {card.name}
+          </h1>
+        )}
+      </>
 
-      {/* <h1>{decks.title}</h1> */}
-    {/* <CardList /> */}
 
       </div>
 
