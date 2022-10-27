@@ -8,11 +8,6 @@ const SpellSearch = (props) => {
     spellQuery: "",
     option: "type"
   })
-  console.log(formData)
-    // {value: 'type', label: 'type'},
-    // {value: 'name', label: 'name'},
-    // {value: 'color', label: 'color'}
-
   const [results, setResults] = useState([])
   
   const handleChange = e => {
@@ -56,7 +51,7 @@ const SpellSearch = (props) => {
       {results.length ?
       <>
         {results.map((result) => 
-          <div key={result.id}>
+          <div key={result.id} >
             {result.name}
             <img src={result.imageUrl} alt={result.name} />
             <button onClick={() => props.handleAddCard(result)}>Add Card</button>
