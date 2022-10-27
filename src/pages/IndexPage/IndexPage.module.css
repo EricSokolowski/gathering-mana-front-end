@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-h1{
-  text-align: center;
-=======
 .container {
   width: 90%;
   display: grid;
@@ -22,5 +18,4 @@ p {
 
 a {
   align-items: center;
->>>>>>> main
 }
