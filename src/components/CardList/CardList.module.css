@@ -3,5 +3,5 @@
 img:hover {
   cursor: pointer;
   transition: transform 150ms;
-  transform: scale(1.03);
+  transform: scale(2.50);
 }

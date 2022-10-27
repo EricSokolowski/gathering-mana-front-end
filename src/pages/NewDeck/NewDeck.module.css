@@ -91,5 +91,5 @@ input:focus {
 button:hover {
   cursor: pointer;
   transition: transform 150ms;
-  transform: scale(1.03);
+  
 }
