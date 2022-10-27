@@ -13,9 +13,10 @@ console.log (deck)
         <header>
           <span>
             <h1>{deck.title}</h1>
-            <h1>{deck.owner.name}</h1>
           </span>
         </header>
+        <img src={deck.owner.photo} alt={deck.owner.name} />
+        <p>{deck.owner.name}</p>
       </article>
     </Link>
   )
