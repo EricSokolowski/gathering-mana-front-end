@@ -61,8 +61,7 @@ const SpellSearch = (props) => {
       </>
       :
       <>
-        <div>No Results
-        </div>
+        <div>No Results</div>
       </>}
     </>
   )

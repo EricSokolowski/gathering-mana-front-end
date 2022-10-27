@@ -35,9 +35,11 @@ const NewDeck = () => {
         <SpellSearch handleAddCard={handleAddCard}/>
       </section>
       <section>
-        <input type="text" value={title} onChange={(e)=> setTitle(e.target.value)}/>
+        <input placeholder="Enter Deck Title..." type="text" value={title} onChange={(e)=> setTitle(e.target.value)}/>
         <CardList cards={cards} handleRemoveCard={handleRemoveCard}/>
+        <div>
         <button onClick={handleSubmit}>Confirm Deck</button>
+        </div>
       </section>
     </main>
   )

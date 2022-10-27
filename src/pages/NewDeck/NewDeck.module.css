@@ -31,7 +31,7 @@
   margin: 7px 0px 14px 0px;
 }
 
-.container input, button { 
+.container input{ 
   width: 100%;
   padding: 14px;
   font-size: 14px;
@@ -43,7 +43,7 @@
   width: 100%;
   display: flex;
   flex-direction: column;
-  
+  align-items: center;
 }
 
 .container label {
@@ -52,6 +52,8 @@
 }
 
 .container button {
+  width: 25%;
+  height: 40px;
   color: white;
   font-weight: 600;
   background: #85BAA1;
