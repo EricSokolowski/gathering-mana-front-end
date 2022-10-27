@@ -7,7 +7,15 @@
 }
 
 img {
-  /* display: flex; */
-  max-width: 200px;
+  height: 150px;
+  width: 200px;
   border-radius: 30px;
+}
+
+p {
+  font-size: 20px;
+}
+
+a {
+  align-items: center;
 }
