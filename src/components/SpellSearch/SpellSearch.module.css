@@ -3,3 +3,9 @@
   align-items: center;
   flex-direction: column;
 }
+
+button:hover {
+  cursor: pointer;
+  transition: transform 150ms;
+  transform: scale(1.03);
+}
