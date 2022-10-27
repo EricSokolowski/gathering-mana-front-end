@@ -4,6 +4,7 @@
   overflow: hidden;
   /* align-items: center; */
   justify-content: space-around;
+  padding-top: 50px;
 }
 
 .container p { margin: 0; padding: 0px 0 10px; }
@@ -31,7 +32,7 @@
   margin: 7px 0px 14px 0px;
 }
 
-.container input, button { 
+.container input{ 
   width: 100%;
   padding: 14px;
   font-size: 14px;
@@ -43,7 +44,7 @@
   width: 100%;
   display: flex;
   flex-direction: column;
-  
+  align-items: center;
 }
 
 .container label {
@@ -52,10 +53,13 @@
 }
 
 .container button {
+  width: 25%;
+  height: 40px;
   color: white;
   font-weight: 600;
   background: #85BAA1;
   margin: 21px 0px 0px 0px;
+  margin-bottom: 50px;
 }
 
 .container a {
@@ -84,4 +88,10 @@ input:focus {
   .container form {
     min-width: 100%;
   }
+}
+
+button:hover {
+  cursor: pointer;
+  transition: transform 150ms;
+  
 }
