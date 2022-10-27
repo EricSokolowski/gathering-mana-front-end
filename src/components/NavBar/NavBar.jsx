@@ -5,27 +5,27 @@ const NavBar = ({ user, handleLogout }) => {
   return (
     <nav>
       {user ?
-        <ul className="link">
+        <ul>
           Welcome, {user.name}
           <Link to="/profiles" 
-            style={{ textDecoration: 'none' }}>Profiles</Link>
+            style={{ textDecoration: 'none', color:'white' }}>Profiles</Link>
           <Link to="/decks-index" 
-            style={{ textDecoration: 'none'}}>Deck Page</Link>
+            style={{ textDecoration: 'none', color:'white'}}>Deck Page</Link>
           <Link to="/new-deck" 
-            style={{ textDecoration: 'none' }}>Build Deck</Link>
+            style={{ textDecoration: 'none', color:'white' }}>Build Deck</Link>
           <Link to="/changePassword" 
-            style={{ textDecoration: 'none' }}>Change Password</Link>
+            style={{ textDecoration: 'none', color:'white' }}>Change Password</Link>
           <Link to="" onClick={handleLogout} 
-            style={{ textDecoration: 'none' }}>LOG OUT</Link>
+            style={{ textDecoration: 'none', color:'white' }}>LOG OUT</Link>
         </ul>
         :
         <ul className="link">
           <Link to="/decks-index" 
-          style={{ textDecoration: 'none' }}>Deck Page</Link>
+          style={{ textDecoration: 'none', color:'white' }}>Deck Page</Link>
           <Link to="/login" 
-          style={{ textDecoration: 'none' }}>Log In</Link>
+          style={{ textDecoration: 'none', color:'white' }}>Log In</Link>
           <Link to="/signup" 
-          style={{ textDecoration: 'none' }}>Sign Up</Link>
+          style={{ textDecoration: 'none', color:'white' }}>Sign Up</Link>
         </ul>
       }
     </nav>
