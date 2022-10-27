@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react"
 import { useParams } from "react-router-dom"
 import styles from "./DeckDetails.module.css"
-import CardList from "../../components/CardList/CardList.jsx"
+
 
 
 
@@ -11,7 +11,7 @@ import CardList from "../../components/CardList/CardList.jsx"
 // Services
 import * as deckService from '../../services/deckService'
 
-const DeckDetails = (props) => {
+const DeckDetails = () => {
   const { id } = useParams()
   const [deck, setDeck] = useState(null)
   // const [cards, setCards] = useState([])
@@ -26,28 +26,34 @@ const DeckDetails = (props) => {
   },[id])
 
 // console.log("Deck State", deck.cards)
-console.log("")
+
 // if (!deck) return <Loading />
   return (
     <main className={styles.container}>
       Details
-      <div>
         {/* <CardList cards={cards}/> */}
-      <>
-        {deck.cards?.map((card)=>
+      {/* <>
+        {deck.cards?.map((card) =>
           <h1>
             {card.name}
           </h1>
         )}
-      </>
+      </> */}
+      {deck?.cards.map((card) => 
+        
+        <div key= {card._id}>
+        <p>
+          {card.name}
+        </p>
+        <img src={card.imgUrl} alt={card.name} />
 
+        </div>
 
-      </div>
-
+      
+      )}
       <section>
         <h1>Comments</h1>
       </section>
-
     </main>
   )
 }
