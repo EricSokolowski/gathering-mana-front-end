@@ -6,18 +6,18 @@ const NavBar = ({ user, handleLogout }) => {
     <nav>
       {user ?
         <ul>
-          <li>Welcome, {user.name}</li>
-          <li><Link to="/profiles">Profiles</Link></li>
-          <li><Link to="" onClick={handleLogout}>LOG OUT</Link></li>
-          <li><Link to="/changePassword">Change Password</Link></li>
-          <li><Link to="/new-deck">Build Deck</Link></li>
-          <li><Link to="/decks-index">Deck Page</Link></li>
+          Welcome, {user.name}
+          <Link to="/profiles">Profiles</Link>
+          <Link to="" onClick={handleLogout}>LOG OUT</Link>
+          <Link to="/changePassword">Change Password</Link>
+          <Link to="/new-deck">Build Deck</Link>
+          <Link to="/decks-index">Deck Page</Link>
         </ul>
         :
         <ul>
-          <li><Link to="/decks-index">Deck Page</Link></li>
-          <li><Link to="/login">Log In</Link></li>
-          <li><Link to="/signup">Sign Up</Link></li>
+          <Link to="/decks-index">Deck Page</Link>
+          <Link to="/login">Log In</Link>
+          <Link to="/signup">Sign Up</Link>
         </ul>
       }
     </nav>
