@@ -15,6 +15,12 @@ const NewDeck = () => {
     setCards([...cards, card])
   }
 
+  const handleRemoveCard = (cardData) => {
+    const card = {...cardData, colorIdentity: cardData.colorIdentity[0]}
+    console.log("**This is CARD**", card)
+    setCards([...cards, card])
+  }
+
   const handleSubmit = async () => {
     const res = await deckService.create({
       title:title,
@@ -24,12 +30,16 @@ const NewDeck = () => {
   }
    //console.log("**CARDS STATE**", cards)
   return (
-    <>
-      <input type="text" value={title} onChange={(e)=> setTitle(e.target.value)}/>
-      <SpellSearch handleAddCard={handleAddCard}/>
-      <CardList cards={cards} />
-      <button onClick={handleSubmit}>Confirm Deck</button>
-    </>
+    <main className={styles.container}>
+      <section>
+        <SpellSearch handleAddCard={handleAddCard}/>
+      </section>
+      <section>
+        <input type="text" value={title} onChange={(e)=> setTitle(e.target.value)}/>
+        <CardList cards={cards} handleRemoveCard={handleRemoveCard}/>
+        <button onClick={handleSubmit}>Confirm Deck</button>
+      </section>
+    </main>
   )
     
 }
