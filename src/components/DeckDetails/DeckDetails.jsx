@@ -1,61 +1,54 @@
-import { useState, useEffect } from "react"
-import { useParams } from "react-router-dom"
-import styles from "./DeckDetails.module.css"
-
-
-
+import { useState, useEffect } from "react";
+import { useParams, Link } from "react-router-dom";
+import styles from "./DeckDetails.module.css";
 
 // import Loading from "../Loading/Loading"
 // import AuthorInfo from "../../components/AuthorInfo/AuthorInfo"
 
 // Services
-import * as deckService from '../../services/deckService'
+import * as deckService from "../../services/deckService";
 
-const DeckDetails = () => {
-  const { id } = useParams()
-  const [deck, setDeck] = useState(null)
+const DeckDetails = (props) => {
+  const { id } = useParams();
+  const [deck, setDeck] = useState(null);
   // const [cards, setCards] = useState([])
 
   useEffect(() => {
     const fetchDeck = async () => {
-      const data  = await deckService.show(id)
-      console.log(data)
-      setDeck(data)
-    }
-    fetchDeck()
-  },[id])
+      const data = await deckService.show(id);
+      console.log(data);
+      setDeck(data);
+    };
+    fetchDeck();
+  }, [id]);
 
-// console.log("Deck State", deck.cards)
+  // console.log("Deck State", deck.cards)
 
-// if (!deck) return <Loading />
+  if (!deck) return <h1>Loading</h1>;
   return (
     <main className={styles.container}>
       Details
-        {/* <CardList cards={cards}/> */}
-      {/* <>
-        {deck.cards?.map((card) =>
-          <h1>
-            {card.name}
-          </h1>
-        )}
-      </> */}
-      {deck?.cards.map((card) => 
-        
-        <div key= {card._id}>
-        <p>
-          {card.name}
-        </p>
-        <img src={card.imgUrl} alt={card.name} />
-
+      {deck?.cards.map((card) => (
+        <div key={card._id}>
+          <p>{card.name}</p>
+          <img src={card.imgUrl} alt={card.name} />
         </div>
-
-      
-      )}
+      ))}
+      <span>
+        {deck.owner._id === props.user.profile && (
+          <>
+            <Link to={`/decks/${id}/edit`} state={deck}>
+              Edit
+            </Link>
+            <button onClick={() => props.handleDeleteDeck(id)}>Delete</button>
+          </>
+        )}
+      </span>
       <section>
         <h1>Comments</h1>
       </section>
     </main>
-  )
-}
+  );
+};
 
-export default DeckDetails
+export default DeckDetails;

@@ -11,6 +11,8 @@ import ChangePassword from './pages/ChangePassword/ChangePassword'
 import IndexPage from './pages/IndexPage/IndexPage'
 import NewDeck from './pages/NewDeck/NewDeck'
 import DeckDetails from './components/DeckDetails/DeckDetails'
+import EditDeck from './pages/EditDeck/EditDeck'
+
 // components
 import NavBar from './components/NavBar/NavBar'
 import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute'
@@ -40,6 +42,18 @@ const App = () => {
     const newDeck = await deckService.create(deckData)
     setDecks([newDeck, ...decks])
     navigate('/decks')
+  }
+
+  const handleUpdateDeck = async (deckData) => {
+    const updatedDeck = await deckService.update(deckData)
+    setDecks(decks.map((b) => deckData._id === b._id ? updatedDeck : b))
+    navigate('/decks-index')
+  }
+
+  const handleDeleteDeck = async (id) => {
+    const deletedDeck = await deckService.deleteDeck(id)
+    setDecks(decks.filter(d => d._id !== deletedDeck._id))
+    navigate('/decks-index')
   }
 
   useEffect(() => {
@@ -97,9 +111,17 @@ const App = () => {
           path="/decks/:id"
           element={
             <ProtectedRoute user={user}>
-              <DeckDetails user={user} />
+              <DeckDetails user={user} handleDeleteDeck={handleDeleteDeck} />
             </ProtectedRoute>
           }
+        />
+        <Route 
+          path="/decks/:id/edit" 
+          element={
+            <ProtectedRoute user={user}>		    
+              <EditDeck handleUpdateDeck={handleUpdateDeck} />	          
+            </ProtectedRoute>
+          }   
         />
       </Routes>
     </>
