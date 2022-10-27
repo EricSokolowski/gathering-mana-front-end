@@ -1,0 +1,13 @@
+* {
+  box-sizing: border-box;
+}
+
+#root {
+  height: 100%;
+}
+
+body {
+  overflow: auto;
+  padding-top: 80px;
+  background-color: #FFCF99;
+}

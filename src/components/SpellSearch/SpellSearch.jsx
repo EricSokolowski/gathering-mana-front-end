@@ -52,7 +52,7 @@ const SpellSearch = (props) => {
       <>
         {results.map((result) => 
           <div key={result.id} >
-            {result.name}
+            {/* {result.name} */}
             <img src={result.imageUrl} alt={result.name} />
             <button onClick={() => props.handleAddCard(result)}>Add Card</button>
           </div>
