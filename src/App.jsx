@@ -10,7 +10,7 @@ import Profiles from './pages/Profiles/Profiles'
 import ChangePassword from './pages/ChangePassword/ChangePassword'
 import IndexPage from './pages/IndexPage/IndexPage'
 import NewDeck from './pages/NewDeck/NewDeck'
-
+import DeckDetails from './components/DeckDetails/DeckDetails'
 // components
 import NavBar from './components/NavBar/NavBar'
 import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute'
@@ -91,6 +91,14 @@ const App = () => {
           path="/new-deck"
           element = {
             <NewDeck handleAddDeck={handleAddDeck}/>
+          }
+        />
+        <Route
+          path="/decks/:id"
+          element={
+            <ProtectedRoute user={user}>
+              <DeckDetails user={user} />
+            </ProtectedRoute>
           }
         />
       </Routes>

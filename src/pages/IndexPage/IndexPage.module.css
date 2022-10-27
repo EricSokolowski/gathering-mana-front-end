@@ -1,0 +1,21 @@
+.container {
+  width: 90%;
+  display: grid;
+  grid-template-rows: repeat(minmax(170px, 1fr));
+	grid-template-columns: auto auto;
+  grid-gap: 20px;
+}
+
+img {
+  height: 170px;
+  width: 200px;
+  border-radius: 30px;
+}
+
+p {
+  font-size: 20px;
+}
+
+a {
+  align-items: center;
+}
