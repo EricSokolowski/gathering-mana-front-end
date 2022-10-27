@@ -1,13 +1,14 @@
 # Gathering Magic
 
 ## Gathering Magic is a Full Stack web appliction designined to let users create their own decks.
+  Once
 
 
 
 # Getting Started 
 * [Trello](https://trello.com/b/2cbArLBF/gatheringmana)
 * [Back End Repo](https://github.com/EricSokolowski/gathering-mana-back-end)
-* [Deployed site]()
+* [Deployed site](https://gathering-magic.netlify.app/)
 * [MTG API](https://docs.magicthegathering.io/)
  <br>
  <br>
@@ -21,7 +22,7 @@ Marcus Hyman - [Github](https://github.com/hymanrcus)
 
 # Screenshots
 
-
+![landing Page]()
 
 # Technologies Used:
 
