@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
 import styles from "./DeckDetails.module.css";
+import NewComment from "../NewComment/NewComment";
 
 // import Loading from "../Loading/Loading"
 // import AuthorInfo from "../../components/AuthorInfo/AuthorInfo"
@@ -12,6 +13,11 @@ const DeckDetails = (props) => {
   const { id } = useParams();
   const [deck, setDeck] = useState(null);
   // const [cards, setCards] = useState([])
+
+  const handleAddComment = async (commentData) => {
+    const newComment = await deckService.createComment(id, commentData)
+    setDeck({ ...deck, comments: [...deck.comments, newComment] })
+  }
 
   useEffect(() => {
     const fetchDeck = async () => {
@@ -30,8 +36,7 @@ const DeckDetails = (props) => {
       Details
       {deck?.cards.map((card) => (
         <div key={card._id}>
-          <p>{card.name}</p>
-          <img src={card.imgUrl} alt={card.name} />
+          <img src={card.imageUrl} alt={card.name} />
         </div>
       ))}
       <span>
@@ -46,6 +51,7 @@ const DeckDetails = (props) => {
       </span>
       <section>
         <h1>Comments</h1>
+        <NewComment handleAddComment={handleAddComment} />
       </section>
     </main>
   );

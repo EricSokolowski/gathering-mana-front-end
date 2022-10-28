@@ -21,10 +21,9 @@ const EditDeck = (props) => {
   }
 
   const handleRemoveCard = (cardData) => {
-    const card = {...cardData, colorIdentity: cardData.colorIdentity[0]}
-    console.log("**This is CARD**", card)
-    setCards([...cards, card])
-  }
+    setCards([...cards, cardData])
+    setCards(cards.filter((c) => c.id !== cardData.id))
+    }
 
 
   const handleSubmit = async (e) => {
@@ -33,6 +32,7 @@ const EditDeck = (props) => {
       title:title,
       cards:cards
     })
+    navigate('/decks-index')
   }
 
 
