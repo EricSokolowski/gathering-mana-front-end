@@ -1,7 +1,7 @@
 # Gathering Magic
 
 ## Gathering Magic is a Full Stack web appliction designined to let users create their own decks.
-  Once
+
 
 
 
@@ -22,7 +22,9 @@ Marcus Hyman - [Github](https://github.com/hymanrcus)
 
 # Screenshots
 
-![landing Page]()
+![landing Page](public/GathMagic-Landing.png)
+
+![Deck Builder Page](public/GathMagic-DeckBuild.png)
 
 # Technologies Used:
 
