@@ -4,6 +4,9 @@
   grid-template-rows: repeat(minmax(170px, 1fr));
 	grid-template-columns: auto auto;
   grid-gap: 20px;
+  text-decoration: none;
+  margin-top: 20px;
+  
 }
 
 img {
