@@ -3,7 +3,7 @@ import { useLocation, useNavigate } from "react-router-dom"
 import styles from './EditDeck.module.css'
 import SpellSearch from "../../components/SpellSearch/SpellSearch"
 import CardList from "../../components/CardList/CardList"
-import * as deckService from '../../services/deckService'
+
 
 
 const EditDeck = (props) => {
@@ -38,11 +38,11 @@ const EditDeck = (props) => {
 
   return (
     <main className={styles.container}>
-      <section>
+      <section className={styles.spellSearch}>
         <SpellSearch handleAddCard={handleAddCard} />
       </section>
-      <section>
-        <input type="text" value={title} onChange={(e)=> setTitle(e.target.value)}/>
+      <input type="text" className={styles.title} value={title} onChange={(e)=> setTitle(e.target.value)}/>
+      <section className={styles.cardList}>
         <CardList cards={cards} handleRemoveCard={handleRemoveCard}/>
         <button onClick={handleSubmit}>Confirm Deck</button>
       </section>

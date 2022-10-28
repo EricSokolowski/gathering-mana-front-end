@@ -104,7 +104,9 @@ const App = () => {
         <Route
           path="/new-deck"
           element = {
-            <NewDeck handleAddDeck={handleAddDeck}/>
+            <ProtectedRoute user={user}>
+              <NewDeck handleAddDeck={handleAddDeck}/>
+            </ProtectedRoute>
           }
         />
         <Route

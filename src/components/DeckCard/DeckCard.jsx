@@ -15,7 +15,6 @@ console.log (deck)
             <h1>{deck.title}</h1>
           </span>
         </header>
-        <img src={deck.owner.photo} alt={deck.owner.name} />
         <p>{deck.owner.name}</p>
       </article>
     </Link>

@@ -5,6 +5,7 @@ const Comments = (props) => {
 
   return (
     <>
+      {console.log(props)}
       {props.comments.map((comment) => (
         <CommentCard
           key={comment._id}

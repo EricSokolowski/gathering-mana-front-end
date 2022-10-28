@@ -4,9 +4,9 @@ const CommentCard = ({ comment }) => {
   console.log(comment)
   return (
     <article>
-      <header>
+      {/* <header>
         <h2>{comment.author.name}</h2>
-      </header>
+      </header> */}
       <p>{comment.content}</p>
     </article>
   )

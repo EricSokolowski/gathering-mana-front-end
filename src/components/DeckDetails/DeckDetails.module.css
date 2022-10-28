@@ -3,6 +3,7 @@
   display: flex;
   overflow: scroll;
   align-items: center;
+  align-content: center;
   flex-direction: column;
   background-color: var(--card-background);
 }

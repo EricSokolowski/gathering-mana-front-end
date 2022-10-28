@@ -37,10 +37,10 @@ console.log(cards)
       </section>
       <section>
         <input placeholder="Enter deck title" type="text" value={title} onChange={(e)=> setTitle(e.target.value)}/>
-        <CardList cards={cards} handleRemoveCard={handleRemoveCard}/>
         <div>
         <button onClick={handleSubmit}>Confirm Deck</button>
         </div>
+        <CardList cards={cards} handleRemoveCard={handleRemoveCard}/>
       </section>
     </main>
   )
