@@ -4,7 +4,7 @@ import styles from './NewComment.module.css'
 // Components
 
 const NewComment = (props) => {
-  const [form, setForm] = useState({ text: '' })
+  const [form, setForm] = useState({ content: '' })
 
   const handleChange = ({ target }) => {
     setForm({ ...form, [target.name]: target.value })
@@ -13,7 +13,7 @@ const NewComment = (props) => {
   const handleSubmit = (e) => {
     e.preventDefault()
     props.handleAddComment(form)
-    setForm({ text: '' })
+    setForm({ content: '' })
   }
 
   return (
@@ -21,9 +21,9 @@ const NewComment = (props) => {
       <textarea
         required
         type="text"
-        name="text"
+        name="content"
         id="text-input"
-        value={form.text}
+        value={form.content}
         placeholder="Add a Comment"
         onChange={handleChange}
       />

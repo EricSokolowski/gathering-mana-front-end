@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
 import styles from "./DeckDetails.module.css";
 import NewComment from "../NewComment/NewComment";
+import Comments from "../../components/Comments/Comments"
 
 // import Loading from "../Loading/Loading"
 // import AuthorInfo from "../../components/AuthorInfo/AuthorInfo"
@@ -52,6 +53,7 @@ const DeckDetails = (props) => {
       <section>
         <h1>Comments</h1>
         <NewComment handleAddComment={handleAddComment} />
+      <Comments comments={deck.comments} user={props.user} />
       </section>
     </main>
   );
