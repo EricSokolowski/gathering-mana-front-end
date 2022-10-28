@@ -12,11 +12,8 @@ const EditDeck = (props) => {
   const [cards, setCards] = useState(state.cards)
   const [title, setTitle] = useState(state.title)
 
-  console.log(state)
-
   const handleAddCard = (cardData) => {
     const card = {...cardData, colorIdentity: cardData.colorIdentity[0]}
-    console.log("**This is CARD**", card)
     setCards([...cards, card])
   }
 

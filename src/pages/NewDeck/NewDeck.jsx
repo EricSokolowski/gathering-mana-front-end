@@ -15,7 +15,7 @@ const NewDeck = () => {
     console.log("**This is CARD**", card)
     setCards([...cards, card])
   }
-console.log(cards)
+  
   const handleRemoveCard = (cardData) => {
   setCards([...cards, cardData])
   setCards(cards.filter((c) => c.id !== cardData.id))

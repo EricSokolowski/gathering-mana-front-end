@@ -31,7 +31,7 @@ const SpellSearch = (props) => {
       onSubmit={handleSubmit}
       className={styles.container}
       >
-      <Dropdown placeHolder='Select...' formData={formData} handleChange={handleChange} />
+        <Dropdown placeHolder='Select...' formData={formData} handleChange={handleChange} />
         <div className={styles.inputContainer}>
           <input
             placeholder="Search for spell"
@@ -49,20 +49,20 @@ const SpellSearch = (props) => {
         </div>
       </form>
       {results.length ?
-      <>
-        {results.map((result) => 
-          <div key={result.id} >
+        <>
+          {results.map((result) => 
+            <div key={result.id} >
             {/* {result.name} */}
-            <img src={result.imageUrl} alt={result.name} />
-            <button className={styles.button} onClick={() => props.handleAddCard(result)}>Add Card</button>
-          </div>
-          
-        )}
-      </>
+              <img src={result.imageUrl} alt={result.name} />
+              <button className={styles.button} onClick={() => props.handleAddCard(result)}>Add Card</button>
+            </div>
+          )}
+        </>
       :
-      <>
-        <div>No Results</div>
-      </>}
+        <>
+          <div>No Results</div>
+        </>
+      }
     </>
   )
 }
