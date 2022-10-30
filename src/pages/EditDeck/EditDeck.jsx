@@ -40,19 +40,8 @@ const EditDeck = (props) => {
 
   return (
     <main className={styles.container}>
-      <section className={styles.spellSearch}>
         <CardSearch handleAddCard={handleAddCard} />
-      </section>
-      <input
-        type="text"
-        className={styles.title}
-        value={title}
-        onChange={(e) => setTitle(e.target.value)}
-      />
-      <section className={styles.cardList}>
         <CardList cards={cards} handleRemoveCard={handleRemoveCard} />
-        <button onClick={handleSubmit}>Confirm Deck</button>
-      </section>
     </main>
   );
 };

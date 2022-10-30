@@ -33,7 +33,6 @@ const CardSearch = (props) => {
       onSubmit={handleSubmit}
       >
         <Dropdown placeHolder='Select...' formData={formData} handleChange={handleChange} />
-        {/* <div className={styles.inputContainer}> */}
           <input
             placeholder="Search for spell"
             type="text"
@@ -42,12 +41,8 @@ const CardSearch = (props) => {
             value={formData.spellQuery}
             name="spellQuery"
             onChange={handleChange}
-          />
-        {/* </div> */}
-        
-        {/* <div> */}
+          />    
           <button className={styles.button}>Search</button>
-        {/* </div> */}
       </form>
       {results.length ?
         <>
@@ -68,11 +63,3 @@ const CardSearch = (props) => {
 }
 
 export default CardSearch
-
-// {results.filter(result => result.includes(result.imageUrl)).map(filteredResult => (
-//<div key={result.id}>
-//  <button 
-//    onClick={() => props.handleAddCard(result)}>
-//      <img src={result.imageUrl} alt={result.name />
-//  </button>
-//))}
