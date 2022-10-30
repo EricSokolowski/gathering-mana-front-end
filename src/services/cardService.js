@@ -1,6 +1,6 @@
-import * as tokenService from '../services/tokenService'
+import * as tokenService from './tokenService'
 
-const BASE_URL = `${process.env.REACT_APP_BACK_END_SERVER_URL}/api/spells`
+const BASE_URL = `${process.env.REACT_APP_BACK_END_SERVER_URL}/api/cards`
 
 export async function search(spellQuery) {
   const res = await fetch(`${BASE_URL}/search`, {

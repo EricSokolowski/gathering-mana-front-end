@@ -7,8 +7,6 @@ const NavBar = ({ user, handleLogout }) => {
       {user ?
         <ul>
           Welcome, {user.name}
-          <Link to="/profiles" 
-            style={{ textDecoration: 'none', color:'white' }}>Profiles</Link>
           <Link to="/decks-index" 
             style={{ textDecoration: 'none', color:'white'}}>Decks</Link>
           <Link to="/new-deck" 
