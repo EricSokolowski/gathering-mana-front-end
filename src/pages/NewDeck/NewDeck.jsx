@@ -39,19 +39,8 @@ const NewDeck = (props) => {
 
   return (
     <main className={styles.container}>
-      <CardSearch handleAddCard={handleAddCard} />
-      <section>
-        <input
-          placeholder="Enter deck title"
-          type="text"
-          value={title}
-          onChange={(e) => setTitle(e.target.value)}
-        />
-        <div>
-          <button onClick={handleSubmit}>Confirm Deck</button>
-        </div>
-        <CardList cards={cards} handleRemoveCard={handleRemoveCard} />
-      </section>
+      <CardSearch handleAddCard={handleAddCard} handleSubmit={handleSubmit} />
+      <CardList cards={cards} handleRemoveCard={handleRemoveCard} handleSubmit={handleSubmit} setTitle={setTitle} title={title}/>
     </main>
   );
 };
