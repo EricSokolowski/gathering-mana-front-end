@@ -1,7 +1,7 @@
-import { React, useEffect, useState } from "react";
-import './Dropdown.css'
+import { React } from "react";
+import './Dropdown.module.css'
 
-const Dropdown = ({ placeHolder, formData, handleChange }) => {
+const Dropdown = ({ formData, handleChange }) => {
 
   return (
     <select name="option" value={formData.option} onChange={handleChange}>

@@ -47,7 +47,7 @@ const DeckDetails = (props) => {
         <section>
           <h1>Comments</h1>
           <NewComment handleAddComment={handleAddComment} />
-          <Comments comments={deck.comments} user={props.user} />
+          <Comments comments={deck.comments} user={props.user}/>
         </section>
       </main>
     )

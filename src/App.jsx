@@ -6,7 +6,6 @@ import { Routes, Route, useNavigate, } from 'react-router-dom'
 import Signup from './pages/Signup/Signup'
 import Login from './pages/Login/Login'
 import Landing from './pages/Landing/Landing'
-import Profiles from './pages/Profiles/Profiles'
 import ChangePassword from './pages/ChangePassword/ChangePassword'
 import IndexPage from './pages/IndexPage/IndexPage'
 import NewDeck from './pages/NewDeck/NewDeck'
@@ -80,14 +79,6 @@ const App = () => {
           element={<Login handleSignupOrLogin={handleSignupOrLogin} />}
         />
         <Route
-          path="/profiles"
-          element={
-            <ProtectedRoute user={user}>
-              <Profiles />
-            </ProtectedRoute>
-          }
-        />
-        <Route
           path="/change-password"
           element={
             <ProtectedRoute user={user}>
@@ -98,7 +89,9 @@ const App = () => {
         <Route
           path="/decks-index"
           element= {
-            <IndexPage decks={decks}/>
+            <ProtectedRoute user={user}>
+              <IndexPage decks={decks}/>
+            </ProtectedRoute>
           }
         />
         <Route

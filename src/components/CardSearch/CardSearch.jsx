@@ -1,9 +1,9 @@
 import { useState } from "react"
-import styles from './SpellSearch.module.css'
-import * as spellService from '../../services/spellServices'
+import styles from './CardSearch.module.css'
+import * as cardService from '../../services/cardService'
 import Dropdown from '../Dropdown/Dropdown.jsx'
 
-const SpellSearch = (props) => {
+const CardSearch = (props) => {
   const [formData, setFormData] = useState({
     spellQuery: "",
     option: "type"
@@ -17,7 +17,7 @@ const SpellSearch = (props) => {
   const handleSubmit = async evt => {
     evt.preventDefault()
     try {
-      const resultData = await spellService.search(formData)
+      const resultData = await cardService.search(formData)
       setResults(resultData)
       } catch (err) {
       console.log(err)
@@ -52,7 +52,6 @@ const SpellSearch = (props) => {
         <>
           {results.map((result) => 
             <div key={result.id} >
-            {/* {result.name} */}
               <img src={result.imageUrl} alt={result.name} />
               <button className={styles.button} onClick={() => props.handleAddCard(result)}>Add Card</button>
             </div>
@@ -67,4 +66,4 @@ const SpellSearch = (props) => {
   )
 }
 
-export default SpellSearch
+export default CardSearch
