@@ -2,7 +2,6 @@ import { useState } from "react";
 import CardSearch from "../../components/CardSearch/CardSearch.jsx";
 import styles from "./NewDeck.module.css";
 import CardList from "../../components/CardList/CardList.jsx";
-import * as deckService from "../../services/deckService";
 import { useNavigate } from "react-router-dom";
 
 const NewDeck = (props) => {

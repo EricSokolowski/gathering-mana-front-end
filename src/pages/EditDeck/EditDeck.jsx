@@ -41,7 +41,7 @@ const EditDeck = (props) => {
   return (
     <main className={styles.container}>
         <CardSearch handleAddCard={handleAddCard} />
-        <CardList cards={cards} handleRemoveCard={handleRemoveCard} />
+        <CardList cards={cards} handleRemoveCard={handleRemoveCard} handleSubmit={handleSubmit} title={title} setTitle={setTitle}/>
     </main>
   );
 };
