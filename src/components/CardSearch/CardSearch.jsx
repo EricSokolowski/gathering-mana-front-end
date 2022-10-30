@@ -25,14 +25,15 @@ const CardSearch = (props) => {
   }
 
   return (
-    <>
+    <section className={styles.container}
+    >
+      <h1>Search Cards</h1>
       <form
       autoComplete="off"
       onSubmit={handleSubmit}
-      className={styles.container}
       >
         <Dropdown placeHolder='Select...' formData={formData} handleChange={handleChange} />
-        <div className={styles.inputContainer}>
+        {/* <div className={styles.inputContainer}> */}
           <input
             placeholder="Search for spell"
             type="text"
@@ -42,15 +43,15 @@ const CardSearch = (props) => {
             name="spellQuery"
             onChange={handleChange}
           />
-        </div>
+        {/* </div> */}
         
-        <div>
+        {/* <div> */}
           <button className={styles.button}>Search</button>
-        </div>
+        {/* </div> */}
       </form>
       {results.length ?
         <>
-          {results.map((result) => 
+          {results.map((result) => result.imageUrl &&
             <div key={result.id} >
               <img src={result.imageUrl} alt={result.name} />
               <button className={styles.button} onClick={() => props.handleAddCard(result)}>Add Card</button>
@@ -62,8 +63,16 @@ const CardSearch = (props) => {
           <div>No Results</div>
         </>
       }
-    </>
+    </section>
   )
 }
 
 export default CardSearch
+
+// {results.filter(result => result.includes(result.imageUrl)).map(filteredResult => (
+//<div key={result.id}>
+//  <button 
+//    onClick={() => props.handleAddCard(result)}>
+//      <img src={result.imageUrl} alt={result.name />
+//  </button>
+//))}

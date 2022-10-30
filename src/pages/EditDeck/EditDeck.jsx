@@ -1,50 +1,60 @@
-import { useState } from "react"
-import { useLocation, useNavigate } from "react-router-dom"
-import styles from './EditDeck.module.css'
-import CardSearch from "../../components/CardSearch/CardSearch"
-import CardList from "../../components/CardList/CardList"
-
-
+import { useState } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
+import styles from "./EditDeck.module.css";
+import CardSearch from "../../components/CardSearch/CardSearch";
+import CardList from "../../components/CardList/CardList";
 
 const EditDeck = (props) => {
-  const navigate = useNavigate()
-  const { state } = useLocation()
-  const [cards, setCards] = useState(state.cards)
-  const [title, setTitle] = useState(state.title)
+  const navigate = useNavigate();
+  const { state } = useLocation();
+  const [cards, setCards] = useState(state.cards);
+  const [title, setTitle] = useState(state.title);
 
   const handleAddCard = (cardData) => {
-    const card = {...cardData, colorIdentity: cardData.colorIdentity[0]}
-    setCards([...cards, card])
-  }
-
-  const handleRemoveCard = (cardData) => {
-    setCards([...cards, cardData])
-    setCards(cards.filter((c) => c.id !== cardData.id))
+    if (!cardData.colorIdentity) {
+      cardData.colorIdentity = "none";
+    } else {
+      cardData.colorIdentity = cardData.colorIdentity[0];
     }
+    setCards([...cards, cardData]);
+  };
 
+  // Using an index to filter an array is not best practice.
+  // However, we're dealing with an issue where results from
+  // the third party api and our database are being included in card state when adding or removing cards in a deck.
+  // To deal with different ids we rely on index to handle both.
+  // Additionally, users might want multiple instances of the same card in their deck. Filtering by index instead of id will allow a user to do so.
+
+  const handleRemoveCard = (index) => {
+    setCards(cards.filter((c, i) => i !== index));
+  };
 
   const handleSubmit = async (e) => {
     await props.handleUpdateDeck({
-      _id:state._id,
-      title:title,
-      cards:cards
-    })
-    navigate('/decks-index')
-  }
-
+      _id: state._id,
+      title: title,
+      cards: cards,
+    });
+    navigate("/decks-index");
+  };
 
   return (
     <main className={styles.container}>
       <section className={styles.spellSearch}>
         <CardSearch handleAddCard={handleAddCard} />
       </section>
-      <input type="text" className={styles.title} value={title} onChange={(e)=> setTitle(e.target.value)}/>
+      <input
+        type="text"
+        className={styles.title}
+        value={title}
+        onChange={(e) => setTitle(e.target.value)}
+      />
       <section className={styles.cardList}>
-        <CardList cards={cards} handleRemoveCard={handleRemoveCard}/>
+        <CardList cards={cards} handleRemoveCard={handleRemoveCard} />
         <button onClick={handleSubmit}>Confirm Deck</button>
       </section>
     </main>
-  )
-}
+  );
+};
 
-export default EditDeck
+export default EditDeck;
