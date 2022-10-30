@@ -1,7 +1,6 @@
 # Gathering Magic
 
-## Gathering Magic is a Full Stack web appliction designined to let users create their own decks.
-
+## Gathering Magic is a Full Stack web application designed to let users create their own decks.
 
 
 
@@ -12,6 +11,7 @@
 * [MTG API](https://docs.magicthegathering.io/)
  <br>
  <br>
+
 # Our Team
 
 Eric Sokolowski - [GitHub](https://github.com/EricSokolowski)
@@ -44,9 +44,9 @@ Marcus Hyman - [Github](https://github.com/hymanrcus)
 
 
 # Ice Box
-<li>Limit the amount cards added per
+<li>Limit the amount cards added accorrding to the many deck building formats
 <li>Game Inspired CSS
-<li>Add  win/loss data that use can provide
+<li>Add user provided win/loss data
 
 
 
