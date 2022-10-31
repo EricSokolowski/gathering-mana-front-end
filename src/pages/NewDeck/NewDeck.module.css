@@ -17,11 +17,11 @@
   flex-direction: column;
   /* justify-content: flex-start; */
   align-items: center;
-  background-color: #807182;
+  /* background-color: #807182; */
 }
 
 .container section:first-child {
-  background-color: #807182;
+  /* background-color: #807182; */
 }
 
 .container input {
@@ -54,6 +54,8 @@
   background: #85BAA1;
   margin: 21px 0px 0px 0px;
   margin-bottom: 50px;
+  width: 100%;
+  border-radius: 5px;
 }
 
 .container a {
