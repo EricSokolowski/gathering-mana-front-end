@@ -17,11 +17,11 @@
   flex-direction: column;
   /* justify-content: flex-start; */
   align-items: center;
-  background-color: #807182;
+  /* background-color: #807182; */
 }
 
 .container section:first-child {
-  background-color: #807182;
+  /* background-color: #807182; */
 }
 
 .container input {
