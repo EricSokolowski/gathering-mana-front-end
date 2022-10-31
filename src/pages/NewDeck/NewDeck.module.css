@@ -54,6 +54,8 @@
   background: #85BAA1;
   margin: 21px 0px 0px 0px;
   margin-bottom: 50px;
+  width: 100%;
+  border-radius: 5px;
 }
 
 .container a {
