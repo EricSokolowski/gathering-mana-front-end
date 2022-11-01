@@ -1,13 +1,24 @@
 .container {
   align-content: center;
   text-align: center;
-  border: 1px solid black;
-  height: 150px;
-  width: 50%;
-  padding-top: 10px;
+  padding: 10px;
   color: white;
-  /* background-color: #807182; */
+  background-color: rgba(234, 192, 114, 0.096);
   text-decoration: none;
-  border-radius: 5px;
+  border-radius: 10px;
+}
+
+.cardBody {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-image: url('../../assets/card-back.jpg');
+  background-size: cover;
+  width: 180px;
+  height: 250px;
+}
+.link {
+margin: 10px;
 }
 
