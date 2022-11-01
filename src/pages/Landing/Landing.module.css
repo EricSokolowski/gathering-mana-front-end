@@ -1,25 +1,22 @@
-body {
-  background-image: url(../../../public/background1.jpg);
-  background-size: cover;
-}
-
 .container {
+  background-image: url(../../../public/background.jpg);
+  background-size: cover;
+  height: 100%;
   display: flex;
   align-items: center;
+  justify-content: center;
   text-align: center;
   flex-direction: column;
-  color: black;
-  font-size: 25px;
-  font-weight: bolder;
-  text-shadow: 
-  0 0 7px #fff,
-  0 0 10px #fff,
-  0 0 21px #fff,
-  0 0 42px blue,
-  0 0 82px blue,
-  0 0 92px blue,
-  0 0 102px blue,
-  0 0 151px blue;
+  color: white;
+  font-size: 20px;
+  font-weight: 900;
+}
+
+.container section{
+  background: rgba(33, 33, 33, 0.795);
+  padding: 5px 30px;
+  border-radius: 10px;
+  border: 1px solid rgb(155, 155, 155);
 }
 
 

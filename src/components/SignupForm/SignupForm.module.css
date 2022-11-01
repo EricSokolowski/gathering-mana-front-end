@@ -1,21 +1,16 @@
 .container {
   display: flex;
-  flex-flow: column nowrap;
-  justify-content: center;
+  width: 20%;
   align-items: center;
-  margin-bottom: 50px;
-  color: black;
-  font-size: 25px;
-  font-weight: bolder;
-  text-shadow: 
-  0 0 7px #fff,
-  0 0 10px #fff,
-  0 0 21px #fff,
-  0 0 42px blue,
-  0 0 82px blue,
-  0 0 92px blue,
-  0 0 102px blue,
-  0 0 151px blue;
+  justify-content: center;
+  text-align: center;
+  flex-direction: column;
+  background: rgba(33, 33, 33, 0.795);
+  padding: 20px;
+  border-radius: 10px;
+  border: 1px solid rgb(155, 155, 155);
+  color: white;
+  margin-bottom: 900px;
 }
 
 .label{
