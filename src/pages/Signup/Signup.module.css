@@ -1,5 +1,8 @@
 .container {
+  background-image: url(../../../public/background2.jpg);
+  background-size: cover;
   display: flex;
   align-items: center;
   flex-direction: column;
+  height: 100%;
 }
