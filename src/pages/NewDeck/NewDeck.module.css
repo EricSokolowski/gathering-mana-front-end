@@ -1,5 +1,5 @@
 .container {
-  height: 100%;
+  /* height: 100%; */
   display: flex;
   overflow: hidden;
   /* align-items: center; */
@@ -20,8 +20,9 @@
   /* background-color: #807182; */
 }
 
-.container section:first-child {
-  /* background-color: #807182; */
+.container section:nth-child(2) {
+  display: flex;
+  align-self: start;
 }
 
 .container input {
