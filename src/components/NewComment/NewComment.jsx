@@ -1,8 +1,6 @@
 import { useState } from "react"
 import styles from './NewComment.module.css'
 
-// Components
-
 const NewComment = (props) => {
   const [form, setForm] = useState({ content: '' })
 

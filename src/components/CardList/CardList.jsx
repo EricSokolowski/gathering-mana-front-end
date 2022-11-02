@@ -1,16 +1,15 @@
 import styles from './CardList.module.css'
 
-
 const CardList = (props) => {
   return (
     <section>
       <h1> Your Deck</h1>
       <input
-          placeholder="Enter deck title"
-          type="text"
-          value={props.title}
-          onChange={(e) => props.setTitle(e.target.value)}
-        />
+        placeholder="Enter deck title"
+        type="text"
+        value={props.title}
+        onChange={(e) => props.setTitle(e.target.value)}
+      />
       <button onClick={props.handleSubmit}>Confirm Deck</button>
       {props.cards.map((card, index)=>(
         <div className={styles.cardContainer} key={index} >

@@ -1,15 +1,15 @@
-import { useState, useEffect } from "react";
-import { useParams, Link } from "react-router-dom";
-import styles from "./DeckDetails.module.css";
-import NewComment from "../NewComment/NewComment";
+import { useState, useEffect } from "react"
+import { useParams, Link } from "react-router-dom"
+import styles from "./DeckDetails.module.css"
+import NewComment from "../NewComment/NewComment"
 import Comments from "../../components/Comments/Comments"
 
 // Services
-import * as deckService from "../../services/deckService";
+import * as deckService from "../../services/deckService"
 
 const DeckDetails = (props) => {
-  const { id } = useParams();
-  const [deck, setDeck] = useState(null);
+  const { id } = useParams()
+  const [deck, setDeck] = useState(null)
 
   const handleAddComment = async (commentData) => {
     const newComment = await deckService.createComment(id, commentData)
@@ -28,23 +28,25 @@ const DeckDetails = (props) => {
   if (!deck) return <h1>Loading</h1>
     return (
       <main className={styles.container}>
-        Details
-        {deck?.cards.map((card) => (
-          <div key={card._id}>
-            <img src={card.imageUrl} alt={card.name} />
-          </div>
-        ))}
+        <h1>Details</h1>
+        <div className={styles.cardDiv}>
+          {deck?.cards.map((card) => (
+            <div key={card._id}>
+              <img src={card.imageUrl} alt={card.name} />
+            </div>
+          ))}
+        </div>
         <span>
           {deck.owner._id === props.user.profile && (
             <>
               <Link to={`/decks/${id}/edit`} state={deck}>
-                Edit
+                Edit Deck
               </Link>
               <button onClick={() => props.handleDeleteDeck(id)}>Delete</button>
             </>
           )}
         </span>
-        <section>
+        <section className="comments">
           <h1>Comments</h1>
           <NewComment handleAddComment={handleAddComment} />
           <Comments comments={deck.comments} user={props.user}/>
@@ -53,4 +55,4 @@ const DeckDetails = (props) => {
     )
   }
 
-export default DeckDetails;
+export default DeckDetails

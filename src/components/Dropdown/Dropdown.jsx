@@ -1,4 +1,4 @@
-import { React } from "react";
+import { React } from "react"
 import './Dropdown.module.css'
 
 const Dropdown = ({ formData, handleChange }) => {
