@@ -1,15 +1,15 @@
-import { useState, useEffect } from "react";
-import { useParams, Link } from "react-router-dom";
-import styles from "./DeckDetails.module.css";
-import NewComment from "../NewComment/NewComment";
+import { useState, useEffect } from "react"
+import { useParams, Link } from "react-router-dom"
+import styles from "./DeckDetails.module.css"
+import NewComment from "../NewComment/NewComment"
 import Comments from "../../components/Comments/Comments"
 
 // Services
-import * as deckService from "../../services/deckService";
+import * as deckService from "../../services/deckService"
 
 const DeckDetails = (props) => {
-  const { id } = useParams();
-  const [deck, setDeck] = useState(null);
+  const { id } = useParams()
+  const [deck, setDeck] = useState(null)
 
   const handleAddComment = async (commentData) => {
     const newComment = await deckService.createComment(id, commentData)
@@ -30,11 +30,11 @@ const DeckDetails = (props) => {
       <main className={styles.container}>
         <h1>Details</h1>
         <div className={styles.cardDiv}>
-        {deck?.cards.map((card) => (
-          <div key={card._id}>
-            <img src={card.imageUrl} alt={card.name} />
-          </div>
-        ))}
+          {deck?.cards.map((card) => (
+            <div key={card._id}>
+              <img src={card.imageUrl} alt={card.name} />
+            </div>
+          ))}
         </div>
         <span>
           {deck.owner._id === props.user.profile && (
@@ -55,4 +55,4 @@ const DeckDetails = (props) => {
     )
   }
 
-export default DeckDetails;
+export default DeckDetails

@@ -1,27 +1,6 @@
-/* .container {
-  margin-top: 50px;
-  display: flex;
-  justify-content: center;
-}
-
-.cardList {
-  display: flex;
-  flex-direction: column;
-  margin: 0 auto;
-}
-.spellSearch{
-  margin: auto;
-}
-.title{
-  
-  height: 30px;
-} */
-
 .container {
   height: 100%;
   display: flex;
-  /* overflow: hidden; */
-  /* align-items: center; */
   justify-content: space-around;
   padding-top: 50px;
 }
@@ -30,13 +9,9 @@
 
 .container section {
   width: 50%;
-  /* height: 100%; */
   display: flex;
-  /* padding: 28px 21px; */
   flex-direction: column;
-  /* justify-content: flex-start; */
   align-items: center;
-  /* background-color: #807182; */
   align-content: flex-start;
 }
 

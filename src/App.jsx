@@ -56,9 +56,7 @@ const App = () => {
   }
 
   useEffect(() => {
-    console.log("The useEffect is running");
     const fetchAllDecks = async () => {
-      console.log('The Fetch All Decks function is running')
       const data = await deckService.index()
       setDecks(data)
     }

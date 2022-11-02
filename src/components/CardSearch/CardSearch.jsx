@@ -25,24 +25,23 @@ const CardSearch = (props) => {
   }
 
   return (
-    <section className={styles.container}
-    >
+    <section className={styles.container}>
       <h1>Search Cards</h1>
       <form
-      autoComplete="off"
-      onSubmit={handleSubmit}
+        autoComplete="off"
+        onSubmit={handleSubmit}
       >
         <Dropdown placeHolder='Select...' formData={formData} handleChange={handleChange} />
-          <input
-            placeholder="Search for spell"
-            type="text"
-            autoComplete="off"
-            id="spell-query"
-            value={formData.spellQuery}
-            name="spellQuery"
-            onChange={handleChange}
-          />    
-          <button className={styles.button}>Search</button>
+        <input
+          placeholder="Search for spell"
+          type="text"
+          autoComplete="off"
+          id="spell-query"
+          value={formData.spellQuery}
+          name="spellQuery"
+          onChange={handleChange}
+        />    
+        <button className={styles.button}>Search</button>
       </form>
       {results.length ?
         <>
