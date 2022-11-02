@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import styles from './DeckCard.module.css'
-import MagicCard from '../../assets/card-back.jpg'
+
 
 
 const DeckCard = ({ deck }) => {

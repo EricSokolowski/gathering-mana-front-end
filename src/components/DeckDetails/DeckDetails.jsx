@@ -28,23 +28,25 @@ const DeckDetails = (props) => {
   if (!deck) return <h1>Loading</h1>
     return (
       <main className={styles.container}>
-        Details
+        <h1>Details</h1>
+        <div className={styles.cardDiv}>
         {deck?.cards.map((card) => (
           <div key={card._id}>
             <img src={card.imageUrl} alt={card.name} />
           </div>
         ))}
+        </div>
         <span>
           {deck.owner._id === props.user.profile && (
             <>
               <Link to={`/decks/${id}/edit`} state={deck}>
-                Edit
+                Edit Deck
               </Link>
               <button onClick={() => props.handleDeleteDeck(id)}>Delete</button>
             </>
           )}
         </span>
-        <section>
+        <section className="comments">
           <h1>Comments</h1>
           <NewComment handleAddComment={handleAddComment} />
           <Comments comments={deck.comments} user={props.user}/>
